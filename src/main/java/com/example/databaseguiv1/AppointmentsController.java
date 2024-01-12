@@ -1,58 +1,34 @@
 package com.example.databaseguiv1;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Tab;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.io.IOException;
+import java.sql.*;
+import java.time.LocalDateTime;
 
-public class HelloController {
-
-    @FXML
-    private Tab appointmentsTab;
-
-    /*@FXML
-    public void initialize() throws IOException {
-        // Initialize the Appointments Tab
-        FXMLLoader appointmentsLoader = new FXMLLoader(getClass().getResource("AppointmentsTab.fxml"));
-        Node appointmentsContent = appointmentsLoader.load();
-        appointmentsTab.setContent(appointmentsContent);
-
-    }*/
+public class AppointmentsController {
 
     @FXML
-    public void initialize() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("AppointmentsTab.fxml"));
-        appointmentsTab.setContent(loader.load());
-        // Other initialization code
-    }
-
-    /*@FXML
     private TableView<Appointment> appointmentsTableView;
 
     @FXML
     private TableColumn<Appointment, Integer> appointmentIDColumn;
-
     @FXML
     private TableColumn<Appointment, String> animalIDColumn;
-
     @FXML
     private TableColumn<Appointment, LocalDateTime> appointmentStartTimeColumn;
-
     @FXML
     private TableColumn<Appointment, String> staffIDColumn;
-
     @FXML
     private TableColumn<Appointment, String> branchNameColumn;
+    @FXML
+    private TableColumn<Appointment, String> serviceColumn;
 
     @FXML
-    private TableColumn<Appointment, String> serviceColumn;*/
-
-
-
-    // Other @FXML TableColumn properties
-
-    /*@FXML
     public void initialize() {
 
         appointmentIDColumn.setCellValueFactory(new PropertyValueFactory<>("appointmentID"));
@@ -64,9 +40,9 @@ public class HelloController {
         appointmentStartTimeColumn.setCellValueFactory(cellData -> cellData.getValue().appointmentStartTimeProperty());
 
         loadAppointments();
-    }*/
+    }
 
-    /*private void loadAppointments() {
+    private void loadAppointments() {
         String url = "jdbc:mysql://brighton.reclaimhosting.com:3306/tp558_DariasDogsV2";
         String username = "tp558_select";
         String password = "P_;2,}lafy}r";
@@ -100,5 +76,7 @@ public class HelloController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }*/
+    }
+
+    // Methods for loading appointments from the database
 }
