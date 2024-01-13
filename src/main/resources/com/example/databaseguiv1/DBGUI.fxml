@@ -50,6 +50,21 @@
               </content>
 
             </Tab>
+            <Tab fx:id="customerTab" text="Customer">
+              <content>
+                  <fx:include source="customerTab.fxml" />
+              </content>
+            </Tab>
+            <Tab fx:id="ManagerLog" text="Manager Log">
+              <content>
+                  <fx:include source="ManagerLog.fxml" />
+              </content>
+          </Tab>
+            <Tab fx:id="PaymentTab" text="Payment Tab">
+              <content>
+                  <fx:include source="paymentTab.fxml" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>
