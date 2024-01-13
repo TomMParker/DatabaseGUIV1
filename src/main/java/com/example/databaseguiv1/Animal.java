@@ -84,7 +84,7 @@ public class Animal {
         this.customerID.set(customerID);
     }
 
-    // Property getters (used for binding with TableView)
+    // Property getters (for TableView)
     public SimpleStringProperty animalIDProperty() {
         return animalID;
     }
