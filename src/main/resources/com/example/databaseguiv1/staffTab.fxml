@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="611.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseguiv1.StaffController">
+
+
+
+
+<children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <children>
+            <AnchorPane prefHeight="559.0" prefWidth="172.0">
+                <children>
+                    <Button layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="169.0" text="New Branch" />
+                    <Button layoutX="1.0" layoutY="92.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="169.0" text="Remove Branch" />
+                    <Button layoutX="1.0" layoutY="183.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="169.0" text="Edit Branch" />
+                </children>
+            </AnchorPane>
+            <TableView fx:id="staffTableView" layoutX="170.0" prefHeight="612.0" prefWidth="738.0">
+                <columns>
+                    <TableColumn fx:id="staffIDColumn" prefWidth="56.166656494140625" text="staffID" />
+                    <TableColumn fx:id="staffFirstNameColumn" prefWidth="99.16668701171875" text="staffFirstName" />
+                    <TableColumn fx:id="staffSecondNameColumn" prefWidth="119.5" text="staffSecondName" />
+                  <TableColumn fx:id="staffAddress1Column" prefWidth="95.0" text="staffAddress1" />
+                  <TableColumn fx:id="staffAddress2Column" prefWidth="96.16668701171875" text="staffAddress2" />
+                  <TableColumn fx:id="staffPostcodeColumn" prefWidth="90.0" text="staffPostcode" />
+                  <TableColumn fx:id="staffTelephoneNumberColumn" prefWidth="89.83331298828125" text="staffTelephoneNumber" />
+                  <TableColumn fx:id="currentManagerStaffIDColumn" prefWidth="107.16668701171875" text="currentManagerStaffID" />
+                </columns>
+            </TableView>
+        </children>
+    </AnchorPane>
+</children>
+
+</AnchorPane>

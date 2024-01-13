@@ -65,6 +65,21 @@
                   <fx:include source="paymentTab.fxml" />
               </content>
             </Tab>
+            <Tab fx:id="serviceTab" text="Service">
+              <content>
+                  <fx:include source="serviceTab.fxml" />
+              </content>
+            </Tab>
+            <Tab fx:id="staffeTab" text="Staff">
+              <content>
+                  <fx:include source="staffTab.fxml" />
+              </content>
+            </Tab>
+            <Tab fx:id="voucherTab" text="Voucher">
+              <content>
+                  <fx:include source="voucherTab.fxml" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>
