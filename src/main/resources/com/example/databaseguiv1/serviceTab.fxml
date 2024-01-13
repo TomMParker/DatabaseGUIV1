@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="560.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseguiv1.ServiceController">
+<AnchorPane prefHeight="560.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseguiv1.ServiceController">
 
 
 
@@ -20,7 +20,7 @@
                     <Button layoutX="1.0" layoutY="183.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="169.0" text="Edit Branch" />
                 </children>
             </AnchorPane>
-            <TableView fx:id="serviceTableView" layoutX="170.0" prefHeight="559.0" prefWidth="647.0">
+            <TableView fx:id="serviceTableView" layoutX="170.0" prefHeight="559.0" prefWidth="677.0">
                 <columns>
                     <TableColumn fx:id="serviceColumn" prefWidth="241.0" text="service" />
                     <TableColumn fx:id="costColumn" prefWidth="160.5" text="cost" />

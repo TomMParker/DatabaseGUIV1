@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="559.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseguiv1.CustomerController">
+<AnchorPane prefHeight="559.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseguiv1.CustomerController">
 
 
 
@@ -20,17 +20,18 @@
                     <Button layoutX="1.0" layoutY="183.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="169.0" text="Edit Customer" />
                 </children>
             </AnchorPane>
-            <TableView fx:id="customerTableView" layoutX="170.0" prefHeight="559.0" prefWidth="823.0">
+            
+            <TableView fx:id="customerTableView" layoutX="170.0" prefHeight="550.0" prefWidth="680.0">
                 <columns>
                     <TableColumn fx:id="customerIDColumn" prefWidth="46.0" text="cusID" />
                     <TableColumn fx:id="customerFirstNameColumn" prefWidth="62.5" text="cusFName" />
                     <TableColumn fx:id="customerSecondNameColumn" prefWidth="65.0" text="cusSName" />
                     <TableColumn fx:id="customerEmailColumn" prefWidth="86.5" text="cusEmail" />
-                  <TableColumn fx:id="customerMobileColumn" prefWidth="71.0" text="cusMobile" />
-                  <TableColumn fx:id="customerHomePhoneColumn" prefWidth="94.0" text="cusHomePhone" />
-                  <TableColumn fx:id="customerAddress1Column" prefWidth="158.3333740234375" text="cusAddress1" />
-                  <TableColumn fx:id="customerAddress2Column" prefWidth="146.0" text="cusAddress2" />
-                  <TableColumn fx:id="customerPostcodeColumn" prefWidth="94.0" text="cusPostcode" />
+                  <TableColumn fx:id="customerMobileColumn" prefWidth="88.99996948242188" text="cusMobile" />
+                  <TableColumn fx:id="customerHomePhoneColumn" prefWidth="94.5" text="cusHomePhone" />
+                  <TableColumn fx:id="customerAddress1Column" prefWidth="87.33331298828125" text="cusAddress1" />
+                  <TableColumn fx:id="customerAddress2Column" prefWidth="69.16668701171875" text="cusAddress2" />
+                  <TableColumn fx:id="customerPostcodeColumn" prefWidth="100.3333740234375" text="cusPostcode" />
                 </columns>
             </TableView>
         </children>

@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="560.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseguiv1.VoucherController">
+<AnchorPane prefHeight="560.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseguiv1.VoucherController">
 
 
 
@@ -20,7 +20,7 @@
                     <Button layoutX="1.0" layoutY="183.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="169.0" text="Edit Branch" />
                 </children>
             </AnchorPane>
-            <TableView fx:id="voucherTableView" layoutX="170.0" prefHeight="559.0" prefWidth="647.0">
+            <TableView fx:id="voucherTableView" layoutX="170.0" prefHeight="552.0" prefWidth="676.0">
                 <columns>
                     <TableColumn fx:id="voucherIDColumn" prefWidth="241.0" text="voucherID" />
                     <TableColumn fx:id="voucherActiveColumn" prefWidth="185.5" text="voucherActive" />

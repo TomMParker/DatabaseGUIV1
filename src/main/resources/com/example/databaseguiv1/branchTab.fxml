@@ -5,13 +5,13 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseguiv1.branchController">
+<AnchorPane prefHeight="563.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseguiv1.branchController">
 
 
 
 
 <children>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="279.0" prefWidth="170.0">
         <children>
             <AnchorPane prefHeight="559.0" prefWidth="172.0">
                 <children>
@@ -20,12 +20,12 @@
                     <Button layoutX="1.0" layoutY="183.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="169.0" text="Edit Branch" />
                 </children>
             </AnchorPane>
-            <TableView fx:id="branchTableView" layoutX="170.0" prefHeight="559.0" prefWidth="647.0">
+            <TableView fx:id="branchTableView" layoutX="170.0" prefHeight="559.0" prefWidth="680.0">
                 <columns>
                     <TableColumn fx:id="branchNameColumn" prefWidth="143.0" text="branchName" />
-                    <TableColumn fx:id="branchAddress1Column" prefWidth="258.5" text="branchAddress1" />
-                    <TableColumn fx:id="branchAddress2Column" prefWidth="140.0" text="branchAddress2" />
-                    <TableColumn fx:id="branchPostcodeColumn" prefWidth="104.5" text="branchPostcode" />
+                    <TableColumn fx:id="branchAddress1Column" prefWidth="271.83331298828125" text="branchAddress1" />
+                    <TableColumn fx:id="branchAddress2Column" prefWidth="140.16668701171875" text="branchAddress2" />
+                    <TableColumn fx:id="branchPostcodeColumn" prefWidth="108.66668701171875" text="branchPostcode" />
                 </columns>
             </TableView>
         </children>
