@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="563.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseguiv1.branchController">
-
-
-
-
-<children>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="279.0" prefWidth="170.0">
-        <children>
-            <AnchorPane prefHeight="559.0" prefWidth="172.0">
-                <children>
-                    <Button layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="169.0" text="New Branch" />
-                    <Button layoutX="1.0" layoutY="92.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="169.0" text="Remove Branch" />
-                    <Button layoutX="1.0" layoutY="183.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="169.0" text="Edit Branch" />
-                </children>
-            </AnchorPane>
-            <TableView fx:id="branchTableView" layoutX="170.0" prefHeight="559.0" prefWidth="680.0">
-                <columns>
-                    <TableColumn fx:id="branchNameColumn" prefWidth="143.0" text="branchName" />
-                    <TableColumn fx:id="branchAddress1Column" prefWidth="271.83331298828125" text="branchAddress1" />
-                    <TableColumn fx:id="branchAddress2Column" prefWidth="140.16668701171875" text="branchAddress2" />
-                    <TableColumn fx:id="branchPostcodeColumn" prefWidth="108.66668701171875" text="branchPostcode" />
-                </columns>
-            </TableView>
-        </children>
-    </AnchorPane>
-</children>
-
+<AnchorPane prefHeight="570.0" prefWidth="854.0" styleClass="tab3-content" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseguiv1.branchController">
+    <children>
+        <AnchorPane layoutX="7.0" layoutY="31.0" prefHeight="396.0" prefWidth="165.0" styleClass="button" stylesheets="@stylesheet.css">
+            <children>
+                <TextField fx:id="appIDTextField" layoutX="7.0" layoutY="10.0" prefHeight="25.0" prefWidth="149.0" promptText="branchName" />
+                <TextField fx:id="animalIDTextField" layoutX="7.0" layoutY="48.0" prefHeight="25.0" prefWidth="149.0" promptText="branchAddress1" />
+                <TextField fx:id="startTimeTextField" layoutX="7.0" layoutY="86.0" prefHeight="25.0" prefWidth="149.0" promptText="branchAddress2" />
+                <TextField fx:id="staffIDTextField" layoutX="7.0" layoutY="124.0" prefHeight="25.0" prefWidth="149.0" promptText="branchPostcode" />
+                <Button layoutX="27.0" layoutY="342.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" styleClass="tab1-button" text="Query">
+                    <stylesheets>
+                        <URL value="@button.css" />
+                        <URL value="@stylesheet.css" />
+                    </stylesheets></Button>
+            </children></AnchorPane>
+        <TableView fx:id="branchTableView" layoutX="172.0" layoutY="8.0" prefHeight="418.0" prefWidth="599.0">
+            <columns>
+                <TableColumn fx:id="branchNameColumn" prefWidth="143.0" text="branchName" />
+                <TableColumn fx:id="branchAddress1Column" prefWidth="271.83331298828125" text="branchAddress1" />
+                <TableColumn fx:id="branchAddress2Column" prefWidth="140.16668701171875" text="branchAddress2" />
+                <TableColumn fx:id="branchPostcodeColumn" prefWidth="108.66668701171875" text="branchPostcode" />
+            </columns>
+        </TableView>
+        <AnchorPane layoutX="3.0" layoutY="424.0" prefHeight="163.0" prefWidth="781.0">
+            <children>
+                <Button layoutX="169.0" layoutY="3.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="205.0" stylesheets="@stylesheet.css" text="New Branch" />
+                <Button layoutX="376.0" layoutY="3.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="205.0" stylesheets="@stylesheet.css" text="Remove Branch" />
+                <Button layoutX="583.0" layoutY="3.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="184.0" stylesheets="@stylesheet.css" text="Edit Branch" />
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

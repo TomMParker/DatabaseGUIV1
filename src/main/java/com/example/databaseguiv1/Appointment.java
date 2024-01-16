@@ -22,78 +22,77 @@ public class Appointment {
         this.service = new SimpleStringProperty(service);
     }
 
-    // Getters
     public int getAppointmentID() {
         return appointmentID.get();
+    }
+
+    public SimpleIntegerProperty appointmentIDProperty() {
+        return appointmentID;
+    }
+
+    public void setAppointmentID(int appointmentID) {
+        this.appointmentID.set(appointmentID);
     }
 
     public String getAnimalID() {
         return animalID.get();
     }
 
-    public LocalDateTime getAppointmentStartTime() {
-        return appointmentStartTime.get();
-    }
-
-    public String getStaffID() {
-        return staffID.get();
-    }
-
-    public String getBranchName() {
-        return branchName.get();
-    }
-
-    public String getService() {
-        return service.get();
-    }
-
-    // Setters
-    public void setAppointmentID(int appointmentID) {
-        this.appointmentID.set(appointmentID);
+    public SimpleStringProperty animalIDProperty() {
+        return animalID;
     }
 
     public void setAnimalID(String animalID) {
         this.animalID.set(animalID);
     }
 
-    public void setAppointmentStartTime(LocalDateTime appointmentStartTime) {
-        this.appointmentStartTime.set(appointmentStartTime);
-    }
-
-    public void setStaffID(String staffID) {
-        this.staffID.set(staffID);
-    }
-
-    public void setBranchName(String branchName) {
-        this.branchName.set(branchName);
-    }
-
-    public void setService(String service) {
-        this.service.set(service);
-    }
-
-    // Property getters (used for binding with TableView)
-    public SimpleIntegerProperty appointmentIDProperty() {
-        return appointmentID;
-    }
-
-    public SimpleStringProperty animalIDProperty() {
-        return animalID;
+    public LocalDateTime getAppointmentStartTime() {
+        return appointmentStartTime.get();
     }
 
     public SimpleObjectProperty<LocalDateTime> appointmentStartTimeProperty() {
         return appointmentStartTime;
     }
 
+    public void setAppointmentStartTime(LocalDateTime appointmentStartTime) {
+        this.appointmentStartTime.set(appointmentStartTime);
+    }
+
+    public String getStaffID() {
+        return staffID.get();
+    }
+
     public SimpleStringProperty staffIDProperty() {
         return staffID;
+    }
+
+    public void setStaffID(String staffID) {
+        this.staffID.set(staffID);
+    }
+
+    public String getBranchName() {
+        return branchName.get();
     }
 
     public SimpleStringProperty branchNameProperty() {
         return branchName;
     }
 
+    public void setBranchName(String branchName) {
+        this.branchName.set(branchName);
+    }
+
+    public String getService() {
+        return service.get();
+    }
+
     public SimpleStringProperty serviceProperty() {
         return service;
     }
+
+    public void setService(String service) {
+        this.service.set(service);
+    }
 }
+
+
