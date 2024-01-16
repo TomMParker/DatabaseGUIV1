@@ -36,6 +36,7 @@ public class AppointmentsController {
     private TextField branchNameTextField;
     @FXML
     private TextField serviceTextField;
+    @FXML TextField appointmentStartTimeTextField;
 
     @FXML
     public void initialize() {
@@ -88,6 +89,66 @@ public class AppointmentsController {
     }
 
     @FXML
+    private void handleNewAppointment() {
+        try {
+            String animalID = animalIDTextField.getText();
+            String staffID = staffIDTextField.getText();
+            String branchName = branchNameTextField.getText();
+            String service = serviceTextField.getText();
+            LocalDateTime appointmentStartTime = LocalDateTime.parse(appointmentStartTimeTextField.getText());
+
+            Appointment addAppointment = new Appointment(0, animalID, appointmentStartTime, staffID, branchName, service);
+
+            insertAppointment(addAppointment);
+
+            loadAppointments();
+
+            clearTextFields();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    private void insertAppointment(Appointment appointment) {
+        String url = "jdbc:mysql://brighton.reclaimhosting.com:3306/tp558_DariasDogsV2";
+        String username = "tp558_select";
+        String password = "P_;2,}lafy}r";
+        String sqlQuery = "INSERT INTO tAppointment (animalID, appointmentStartTime, staffID, branchName, service) VALUES (?, ?, ?, ?, ?)";
+
+        try (Connection connection = DriverManager.getConnection(url, username, password);
+             PreparedStatement ps = connection.prepareStatement(sqlQuery)) {
+
+            ps.setString(1, appointment.getAnimalID());
+            ps.setTimestamp(2, Timestamp.valueOf(appointment.getAppointmentStartTime()));
+            ps.setString(3, appointment.getStaffID());
+            ps.setString(4, appointment.getBranchName());
+            ps.setString(5, appointment.getService());
+            boolean status = ps.execute();
+
+            if (status==false){ //thought this would work other way round but displays correct message when added succesfully now
+                System.out.println("Added successfully");
+            } else{
+                System.out.println("Not added");
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void clearTextFields() {
+        animalIDTextField.clear();
+        appointmentStartTimeTextField.clear();
+        staffIDTextField.clear();
+        branchNameTextField.clear();
+        serviceTextField.clear();
+    }
+
+    @FXML
     private void handleQuery() throws SQLException {
         String animalID = animalIDTextField.getText();
         String staffID = staffIDTextField.getText();
@@ -121,7 +182,7 @@ public class AppointmentsController {
                 Appointment appointment = new Appointment(
                         resultSet.getInt("appointmentID"),
                         resultSet.getString("animalID"),
-                        //resultSet.getDate("appointmentStartTime"),
+                        //resultSet.getDate("appointmentStartTime"), // removed as causing errors, set to null - other search fields work
                         null,
                         resultSet.getString("StaffID"),
                         resultSet.getString("branchName"),
