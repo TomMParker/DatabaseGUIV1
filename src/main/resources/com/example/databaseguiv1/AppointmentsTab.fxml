@@ -11,7 +11,7 @@
     <children>
         <AnchorPane layoutX="7.0" layoutY="31.0" prefHeight="395.0" prefWidth="172.0" styleClass="button" stylesheets="@stylesheet.css">
          <children>
-             <TextField fx:id="appIDTextField" layoutX="7.0" layoutY="10.0" prefHeight="25.0" prefWidth="149.0" promptText="appID" />
+             <TextField fx:id="appointmentIDTextField" layoutX="7.0" layoutY="10.0" prefHeight="25.0" prefWidth="149.0" promptText="appointmentID" />
              <TextField fx:id="animalIDTextField" layoutX="7.0" layoutY="48.0" prefHeight="25.0" prefWidth="149.0" promptText="animalID" />
              <TextField fx:id="appointmentStartTimeTextField" layoutX="7.0" layoutY="86.0" prefHeight="25.0" prefWidth="149.0" promptText="appointmentStartTime" />
              <TextField fx:id="staffIDTextField" layoutX="7.0" layoutY="124.0" prefHeight="25.0" prefWidth="149.0" promptText="staffID" />
@@ -34,10 +34,10 @@
             </columns>
         </TableView>
       <AnchorPane layoutX="3.0" layoutY="424.0" prefHeight="163.0" prefWidth="781.0">
-         <children>
-             <Button id="newAppointmentButton" onAction="#handleNewAppointment" layoutX="169.0" layoutY="3.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="205.0" stylesheets="@stylesheet.css" text="New Appointment" />
-                <Button id="button" layoutX="376.0" layoutY="3.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="205.0" stylesheets="@stylesheet.css" text="Cancel Appointment" />
-                <Button layoutX="583.0" layoutY="3.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="184.0" stylesheets="@stylesheet.css" text="Edit Appointment" />
+          <children>
+              <Button id="newAppointmentButton" onAction="#handleNewAppointment" layoutX="169.0" layoutY="3.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="205.0" stylesheets="@stylesheet.css" text="New Appointment" />
+              <Button id="removeAppointmentButton" onAction="#handleRemoveAppointment" layoutX="376.0" layoutY="3.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="205.0" stylesheets="@stylesheet.css" text="Cancel Appointment" />
+              <Button id="editAppointmentButton" onAction="#handleEditAppointment" layoutX="583.0" layoutY="3.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="184.0" stylesheets="@stylesheet.css" text="Edit Appointment" />
          </children>
       </AnchorPane>
     </children>

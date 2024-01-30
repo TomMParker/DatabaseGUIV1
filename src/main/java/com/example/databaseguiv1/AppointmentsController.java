@@ -35,6 +35,8 @@ public class AppointmentsController {
     @FXML
     private TextField branchNameTextField;
     @FXML
+    private TextField appointmentIDTextField;
+    @FXML
     private TextField serviceTextField;
     @FXML TextField appointmentStartTimeTextField;
 
@@ -53,12 +55,10 @@ public class AppointmentsController {
     }
 
     private void loadAppointments() {
-        String url = "jdbc:mysql://brighton.reclaimhosting.com:3306/tp558_DariasDogsV2";
-        String username = "tp558_select";
-        String password = "P_;2,}lafy}r";
+
         String sqlQuery = "SELECT * FROM tAppointment";
 
-        try (Connection connection = DriverManager.getConnection(url, username, password);
+        try (Connection connection = DatabaseConnection.databaseConnection();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sqlQuery)) {
 
@@ -117,7 +117,7 @@ public class AppointmentsController {
         String password = "P_;2,}lafy}r";
         String sqlQuery = "INSERT INTO tAppointment (animalID, appointmentStartTime, staffID, branchName, service) VALUES (?, ?, ?, ?, ?)";
 
-        try (Connection connection = DriverManager.getConnection(url, username, password);
+        try (Connection connection = DatabaseConnection.databaseConnection();
              PreparedStatement ps = connection.prepareStatement(sqlQuery)) {
 
             ps.setString(1, appointment.getAnimalID());
@@ -140,6 +140,84 @@ public class AppointmentsController {
     }
 
 
+    @FXML
+    private void handleRemoveAppointment() {
+        try {
+            int appointmentID = Integer.parseInt(appointmentIDTextField.getText());
+
+            removeAppointment(appointmentID);
+
+            loadAppointments();
+
+            clearTextFields();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void removeAppointment(int appointmentID) {
+
+        try (Connection connection = DatabaseConnection.databaseConnection()) {
+            CallableStatement statement = connection.prepareCall("{CALL pr_removeAppointment(?)}");
+            statement.setInt(1, appointmentID);
+            statement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleEditAppointment() {
+        try {
+            int appointmentId = Integer.parseInt(appointmentIDTextField.getText());
+            String animalID = animalIDTextField.getText();
+            String staffID = staffIDTextField.getText();
+            String branchName = branchNameTextField.getText();
+            String service = serviceTextField.getText();
+            LocalDateTime appointmentStartTime = LocalDateTime.parse(appointmentStartTimeTextField.getText());
+
+            Appointment updatedAppointment = new Appointment(appointmentId, animalID, appointmentStartTime, staffID, branchName, service);
+
+            editAppointment(updatedAppointment);
+
+            loadAppointments();
+
+            clearTextFields();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void editAppointment(Appointment appointment) {
+
+        String sqlQuery = "UPDATE tAppointment SET animalID=?, appointmentStartTime=?, staffID=?, branchName=?, service=? WHERE appointmentID=?";
+
+        try (Connection connection = DatabaseConnection.databaseConnection();
+             PreparedStatement ps = connection.prepareStatement(sqlQuery)) {
+
+            ps.setString(1, appointment.getAnimalID());
+            ps.setTimestamp(2, Timestamp.valueOf(appointment.getAppointmentStartTime()));
+            ps.setString(3, appointment.getStaffID());
+            ps.setString(4, appointment.getBranchName());
+            ps.setString(5, appointment.getService());
+            ps.setInt(6, appointment.getAppointmentID());
+            int status = ps.executeUpdate();
+
+            if (status > 0) {
+                System.out.println("Appointment updated successfully");
+            } else {
+                System.out.println("Appointment update failed");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
     private void clearTextFields() {
         animalIDTextField.clear();
         appointmentStartTimeTextField.clear();
@@ -147,6 +225,14 @@ public class AppointmentsController {
         branchNameTextField.clear();
         serviceTextField.clear();
     }
+
+
+
+
+
+
+
+
 
     @FXML
     private void handleQuery() throws SQLException {
@@ -164,7 +250,7 @@ public class AppointmentsController {
         String username = "tp558_select";
         String password = "P_;2,}lafy}r";
 
-        //query for SQL search, uses % wildcards
+
         String sqlQuery = "SELECT * FROM tAppointment WHERE "
                 + "animalID LIKE '%" + animalID + "%' AND "
                 + "StaffID LIKE '%" + staffID + "%' AND "
@@ -197,66 +283,4 @@ public class AppointmentsController {
 
     }
 }
-      /*  @FXML
-        private void handleNewAppointment () {
-            // Get data from text fields
-            String animalID = animalIDTextField.getText();
-            String staffID = staffIDTextField.getText();
-            String branchName = branchNameTextField.getText();
-            String service = serviceTextField.getText();
-
-            // You need to parse the appointment start time from the text field, e.g., LocalDateTime.parse(startTimeTextField.getText(), DateTimeFormatter.ofPattern("your_date_time_format"))
-
-            // Create a new Appointment object
-            Appointment newAppointment = new Appointment(0, animalID, null, staffID, branchName, service);
-
-            // Insert the new appointment into the database
-            insertAppointment(newAppointment);
-
-            // Refresh the table view
-            loadAppointments();
-
-            // Clear the text fields
-            clearTextFields();
-        }
-
-        private void clearTextFields () {
-            animalIDTextField.clear();
-            staffIDTextField.clear();
-            branchNameTextField.clear();
-            serviceTextField.clear();
-
-        }
-
-        private void insertAppointment (Appointment appointment){
-            String url = "jdbc:mysql://brighton.reclaimhosting.com:3306/tp558_DariasDogsV2";
-            String username = "tp558_select";
-            String password = "P_;2,}lafy}r";
-            String sqlQuery = "INSERT INTO tAppointment (animalID, appointmentStartTime, staffID, branchName, service) VALUES (?, ?, ?, ?, ?)";
-
-            try (Connection connection = DriverManager.getConnection(url, username, password);
-                 PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
-
-                preparedStatement.setString(1, appointment.getAnimalID());
-                // Set other parameters for the appointment as needed
-
-                int rowsAffected = preparedStatement.executeUpdate();
-
-                if (rowsAffected > 0) {
-                    System.out.println("New appointment inserted successfully.");
-                } else {
-                    System.out.println("Failed to insert new appointment.");
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-
-    } catch(
-    SQLException e)
-
-    {
-        throw new RuntimeException(e);
-    }*/
 
