@@ -1,41 +1,288 @@
 {
     -fx-primary-color: #007acc;
     -fx-secondary-color: #4B6EAF;
-
     -fx-focus-color: -fx-secondary-color;
 }
 
-.tab-header-area .tab-header-background {
-    -fx-background-color: -fx-primary-color;
+tab-header-area .tab-header-background{
+    -fx-background-color: #FFFFFF;
 }
+
+/* Default style for tabs */
+.tab-pane .tab {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 0 0 0 0;
+}
+
+/* Style for selected tab */
 .tab-pane .tab:selected {
     -fx-background-color: -fx-secondary-color;
     -fx-background-insets: 0 0 0 0;
     -fx-background-radius: 0 0 0 0;
 }
+
 .tab .tab-label {
     -fx-alignment: CENTER;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-padding: 0 10 0 10;
 }
+
 .tab-pane:top *.tab-header-area {
     -fx-padding: 0 0 0 30;
-
-    /* NO SPACE LEFT OF FIRST TAB */
-    /* -fx-padding: 0 0 0 30; */
 }
+
 .tab-pane {
     -fx-background-color: transparent;
     -fx-tab-min-width: 90px;
     -fx-tab-min-height: 66px;
     -fx-tab-max-height: 66px;
 }
-.tab-pane .tab {
-    -fx-background-color: transparent;
-}
+
 .tab-pane:focused .tab-header-area .headers-region .tab:selected .focus-indicator {
     -fx-border-width: 0;
     -fx-border-insets: 0 0 0 0;
     -fx-border-radius: 0;
 }
+
+/* Colours for each tab */
+.tab-pane .tab.tab1 {
+    -fx-background-color: #9BCAC4;
+}
+.tab-pane .tab.tab2 {
+    -fx-background-color: #DFA2B1;
+}
+.tab-pane .tab.tab3 {
+    -fx-background-color: #D99484;
+}
+.tab-pane .tab.tab4 {
+    -fx-background-color: #A290B8;
+}
+.tab-pane .tab.tab5 {
+    -fx-background-color: #8AC29B;
+}
+.tab-pane .tab.tab6 {
+    -fx-background-color: #9BCAC4;
+}
+.tab-pane .tab.tab7 {
+    -fx-background-color: #DFA2B1;
+}
+.tab-pane .tab.tab8 {
+    -fx-background-color: #D99484;
+}
+.tab-pane .tab.tab9 {
+    -fx-background-color: #A290B8;
+}
+
+/* Specific styles for tab1 content */
+
+
+.tab1-button{
+    -fx-border-color: white;
+    -fx-border-width: 4;
+    -fx-border-radius: 5;
+}
+
+.tab1-button:hover {
+    -fx-border-color: #9BCAC4;
+    -fx-background-color: #9BCAC4;
+    }
+/*tab-header-area .tab-header-background .tab1 {
+    -fx-background-color: #9BCAC4;
+}*/
+.tab1-content {
+    -fx-background-color: #9BCAC4;
+}
+
+.tab-pane .tab.tab1{
+    -fx-border-color: transparent transparent #9BCAC4 transparent;
+}
+
+.tab-pane>*.tab-header-area>*.tab-header-background.tab1 {
+    -fx-background-color: #9BCAC4;
+    -fx-background-insets:0;
+}
+
+
+.tab1-content .button {
+    -fx-background-color: #8AB0B6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab1-content .table-view {
+    -fx-background-color: #A3C6CC;
+}
+
+.tab1 .table-view .column-header-background .label {
+    -fx-background-color: #9BCAC4;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab1 .table-view .table-row-cell:even {
+    -fx-background-color: #FEF898;
+}
+
+.tab1 .table-view .table-row-cell:odd {
+    -fx-background-color: #C4E0E0;
+}
+
+/* Specific styles for tab2 content */
+.tab2-content {
+    -fx-background-color: #DFA2B1;
+}
+
+.tab-pane .tab.tab2 {
+    -fx-border-color: transparent transparent #DFA2B1 transparent;
+}
+
+.tab-pane > *.tab-header-area > *.tab-header-background.tab2 {
+    -fx-background-color: #DFA2B1;
+    -fx-background-insets: 0;
+}
+
+.tab2-content .button {
+    -fx-background-color: #CA7D8C;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab2-content .table-view {
+    -fx-background-color: #E3B5C4;
+}
+
+.tab2 .table-view .column-header-background .label {
+    -fx-background-color: #DFA2B1;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab2 .table-view .table-row-cell:even {
+    -fx-background-color: #FEE5EB;
+}
+
+.tab2 .table-view .table-row-cell:odd {
+    -fx-background-color: #CABEC6;
+}
+
+/* Specific styles for tab3 content */
+.tab3-content {
+    -fx-background-color: #D99484;
+}
+
+.tab-pane .tab.tab3 {
+    -fx-border-color: transparent transparent #D99484 transparent;
+}
+
+.tab-pane > *.tab-header-area > *.tab-header-background.tab3 {
+    -fx-background-color: #D99484;
+    -fx-background-insets: 0;
+}
+
+.tab3-content .button {
+    -fx-background-color: #C58272;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab3-content .table-view {
+    -fx-background-color: #E59E8D;
+}
+
+.tab3 .table-view .column-header-background .label {
+    -fx-background-color: #D99484;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab3 .table-view .table-row-cell:even {
+    -fx-background-color: #FFD0BD;
+}
+
+.tab3 .table-view .table-row-cell:odd {
+    -fx-background-color: #DFA2B1;
+}
+
+/* Specific styles for tab4 content */
+
+.tab4-content {
+    -fx-background-color: #A290B8;
+}
+
+.tab-pane .tab.tab4 {
+    -fx-border-color: transparent transparent #A290B8 transparent;
+}
+
+.tab-pane > *.tab-header-area > *.tab-header-background.tab4 {
+    -fx-background-color: #A290B8;
+    -fx-background-insets: 0;
+
+    }
+
+.tab4-content .button {
+    -fx-background-color: #8D7AA0;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab4-content .table-view {
+    -fx-background-color: #B2A1C1;
+}
+
+.tab4 .table-view .column-header-background .label {
+    -fx-background-color: #A290B8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab4 .table-view .table-row-cell:even {
+    -fx-background-color: #C9C1D3;
+}
+
+.tab4 .table-view .table-row-cell:odd {
+    -fx-background-color: #9B8FAF;
+}
+
+/* Specific styles for tab5 content */
+
+.tab5-content {
+    -fx-background-color: #8AC29B;
+}
+
+.tab-pane .tab.tab5 {
+    -fx-border-color: transparent transparent #8AC29B transparent;
+}
+
+.tab-pane > *.tab-header-area > *.tab-header-background.tab5 {
+    -fx-background-color: #8AC29B;
+    -fx-background-insets: 0;
+}
+
+.tab5-content .button {
+    -fx-background-color: #77A889;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab5-content .table-view {
+    -fx-background-color: #9EC9AE;
+}
+
+.tab5 .table-view .column-header-background .label {
+    -fx-background-color: #8AC29B;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab5 .table-view .table-row-cell:even {
+    -fx-background-color: #B3D4C4;
+}
+
+.tab5 .table-view .table-row-cell:odd {
+    -fx-background-color: #6FA580;
+}
+
+
+

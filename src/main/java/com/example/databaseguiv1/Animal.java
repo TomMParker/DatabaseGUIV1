@@ -26,95 +26,88 @@ public class Animal {
         this.customerID = new SimpleStringProperty(customerID);
     }
 
-    // Getters
     public String getAnimalID() {
         return animalID.get();
+    }
+
+    public SimpleStringProperty animalIDProperty() {
+        return animalID;
+    }
+
+    public void setAnimalID(String animalID) {
+        this.animalID.set(animalID);
     }
 
     public String getAnimalName() {
         return animalName.get();
     }
 
-    public String getAnimalType() {
-        return animalType.get();
-    }
-
-    public String getBreed() {
-        return breed.get();
-    }
-
-    public int getAnimalWeightKG() {
-        return animalWeightKG.get();
-    }
-
-    public String getAnimalInfo() {
-        return animalInfo.get();
-    }
-
-    public String getCustomerID() {
-        return customerID.get();
-    }
-
-    // Setters
-    public void setAnimalID(String animalID) {
-        this.animalID.set(animalID);
+    public SimpleStringProperty animalNameProperty() {
+        return animalName;
     }
 
     public void setAnimalName(String animalName) {
         this.animalName.set(animalName);
     }
 
-    public void setAnimalType(String animalType) {
-        this.animalType.set(animalType);
-    }
-
-    public void setBreed(String breed) {
-        this.breed.set(breed);
-    }
-
-    public void setAnimalWeightKG(int animalWeightKG) {
-        this.animalWeightKG.set(animalWeightKG);
-    }
-
-    public void setAnimalInfo(String animalInfo) {
-        this.animalInfo.set(animalInfo);
-    }
-
-    public void setCustomerID(String customerID) {
-        this.customerID.set(customerID);
-    }
-
-    // Property getters (for TableView)
-    public SimpleStringProperty animalIDProperty() {
-        return animalID;
-    }
-
-    public SimpleStringProperty animalNameProperty() {
-        return animalName;
+    public String getAnimalType() {
+        return animalType.get();
     }
 
     public SimpleStringProperty animalTypeProperty() {
         return animalType;
     }
 
+    public void setAnimalType(String animalType) {
+        this.animalType.set(animalType);
+    }
+
+    public String getBreed() {
+        return breed.get();
+    }
+
     public SimpleStringProperty breedProperty() {
         return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed.set(breed);
+    }
+
+    public int getAnimalWeightKG() {
+        return animalWeightKG.get();
     }
 
     public SimpleIntegerProperty animalWeightKGProperty() {
         return animalWeightKG;
     }
 
+    public void setAnimalWeightKG(int animalWeightKG) {
+        this.animalWeightKG.set(animalWeightKG);
+    }
+
+    public String getAnimalInfo() {
+        return animalInfo.get();
+    }
+
     public SimpleStringProperty animalInfoProperty() {
         return animalInfo;
+    }
+
+    public void setAnimalInfo(String animalInfo) {
+        this.animalInfo.set(animalInfo);
+    }
+
+    public String getCustomerID() {
+        return customerID.get();
     }
 
     public SimpleStringProperty customerIDProperty() {
         return customerID;
     }
 
-
-
-
+    public void setCustomerID(String customerID) {
+        this.customerID.set(customerID);
+    }
 
 }
