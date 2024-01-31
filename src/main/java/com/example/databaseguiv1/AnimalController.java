@@ -118,17 +118,6 @@ public class AnimalController {
         String username = "tp558_select";
         String password = "P_;2,}lafy}r";
 
-        //query for SQL search, uses % wildcards
-        /*String sqlQuery = "SELECT * FROM tAnimal WHERE "
-                + "animalID LIKE '%" + animalID + "%' AND "
-                + "animalName LIKE '%" + animalName + "%' AND "
-                + "animalType LIKE '%" + animalType + "%' AND "
-                + "breed LIKE '%" + breed + "%' AND "
-                + "animalWeightKG LIKE '%" + animalWeightKG + "%' AND "
-                + "animalInfo LIKE '%" + animalInfo + "%' AND "
-                + "branchName LIKE '%" + branchName + "%' AND "
-                + "customerID LIKE '%" + customerID + "%";*/
-
         String sqlQuery = "SELECT * FROM tAnimal WHERE "
                 + "animalID LIKE '%" + animalID + "%' AND "
                 + "animalName LIKE '%" + animalName + "%' AND "

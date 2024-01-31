@@ -59,8 +59,8 @@ public class ManagerLogController {
                         resultSet.getString("managerLogID"),
                         resultSet.getString("staffID"),
                         resultSet.getString("managerStaffID"),
-                        resultSet.getDate("managerStartDate") != null ? resultSet.getDate("managerStartDate").toLocalDate() : null,
-                        resultSet.getDate("managerEndDate") != null ? resultSet.getDate("managerEndDate").toLocalDate() : null
+                        resultSet.getDate("managerStartDate").toLocalDate(),
+                        resultSet.getDate("managerEndDate") != null ? resultSet.getDate("managerEndDate").toLocalDate() : null // need this as null manager end dates cause an error
 
 
                 );

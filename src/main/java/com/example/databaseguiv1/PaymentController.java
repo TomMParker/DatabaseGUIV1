@@ -69,7 +69,7 @@ public class PaymentController {
                         resultSet.getInt("paymentRef"),
                         resultSet.getString("paymentType"),
                         resultSet.getBigDecimal("paymentAmount"),
-                        resultSet.getObject("paymentDate", LocalDate.class),
+                        resultSet.getDate("paymentDate").toLocalDate(),
                         resultSet.getInt("appointmentID"),
                         resultSet.getInt("voucherID"),
                         resultSet.getString("customerID")
