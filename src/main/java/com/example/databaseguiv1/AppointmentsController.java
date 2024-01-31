@@ -66,13 +66,10 @@ public class AppointmentsController {
 
             while (resultSet.next()) {
 
-                Timestamp timestamp = resultSet.getTimestamp("appointmentStartTime");
-                LocalDateTime appointmentStartTime = timestamp != null ? timestamp.toLocalDateTime() : null;
-
                 Appointment appointment = new Appointment(
                         resultSet.getInt("appointmentID"),
                         resultSet.getString("animalID"),
-                        appointmentStartTime,
+                        resultSet.getTimestamp("appointmentStartTime").toLocalDateTime(),
                         resultSet.getString("StaffID"),
                         resultSet.getString("branchName"),
                         resultSet.getString("service")
@@ -87,28 +84,6 @@ public class AppointmentsController {
             e.printStackTrace();
         }
     }
-
-    @FXML
-    private void handleNewAppointment() {
-        try {
-            String animalID = animalIDTextField.getText();
-            String staffID = staffIDTextField.getText();
-            String branchName = branchNameTextField.getText();
-            String service = serviceTextField.getText();
-            LocalDateTime appointmentStartTime = LocalDateTime.parse(appointmentStartTimeTextField.getText());
-
-            Appointment addAppointment = new Appointment(0, animalID, appointmentStartTime, staffID, branchName, service);
-
-            insertAppointment(addAppointment);
-
-            loadAppointments();
-
-            clearTextFields();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 
 
     private void insertAppointment(Appointment appointment) {
@@ -135,6 +110,27 @@ public class AppointmentsController {
 
 
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleNewAppointment() {
+        try {
+            String animalID = animalIDTextField.getText();
+            String staffID = staffIDTextField.getText();
+            String branchName = branchNameTextField.getText();
+            String service = serviceTextField.getText();
+            LocalDateTime appointmentStartTime = LocalDateTime.parse(appointmentStartTimeTextField.getText());
+
+            Appointment addAppointment = new Appointment(0, animalID, appointmentStartTime, staffID, branchName, service);
+
+            insertAppointment(addAppointment);
+
+            loadAppointments();
+
+            clearTextFields();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
